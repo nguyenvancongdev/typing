@@ -3,7 +3,7 @@
      <a-textarea v-model:value="value" :rows="4" placeholder="nhập text"  />
      <div>
      <a-textarea v-model:value="values" :rows="4" placeholder="" />
-      <button @click="copyValue">Copy Value</button>
+      <a-button type="primary" @click="copyValue">Sao chép</a-button>
      </div>
 
 

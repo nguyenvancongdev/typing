@@ -37,6 +37,16 @@ function telexToVietnamese(telex) {
      return vietnamese;
 }    
 import { ref, computed, watchEffect   } from 'vue'
+import { notification } from 'ant-design-vue';
+const openNotification = () => {
+  notification.success({
+    message: 'sao chép thành công',
+    description: values.value,
+    onClick: () => {
+      console.log('Notification Clicked!');
+    },
+  });
+};
 
 const value = ref('')
 
@@ -58,8 +68,10 @@ const values = computed(() => telexToVietnamese(value.value))
             document.body.removeChild(tempTextArea);
 
             // Thông báo cho người dùng biết là đã sao chép thành công (tuỳ chọn)
-            alert("Đã sao chép thành công!");
+            openNotification()
+            
         }
+
 
 </script>
   
